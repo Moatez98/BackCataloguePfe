@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.essat.dao.IPfe;
 import tn.essat.dao.IType;
 import tn.essat.model.Pfe;
+import tn.essat.model.Type;
 
 @RestController
 @CrossOrigin("*")
@@ -34,6 +35,10 @@ public class Appctrl {
 	public List<Pfe> f() {
 		return dao_pfe.findAll();
 	}
+	@GetMapping("/Types")
+	public List<Type> ff() {
+		return dao_type.findAll();
+	}
 
 	@GetMapping("/PfeBytype/{id}")
 	public List<Pfe> f1(@PathVariable("id") int id) {
@@ -54,4 +59,4 @@ public class Appctrl {
 		return dao_pfe.save(pfe);
 	}
 
-}s
+}
